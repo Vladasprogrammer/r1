@@ -1,8 +1,8 @@
-export default function Props2() {
+export default function Props2({t1, t2}) {
     return (
         <>
-        <h2>Myliu Mamą</h2>
-        <h1>Myliu Tėtį</h1>
+        <h1>{t1}</h1>
+        <h2>{t2}</h2>
         </>
     )
 }
