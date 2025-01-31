@@ -1,4 +1,4 @@
-export default function Labas({t}) {
+export default function Labas() {
 
-    return <h3 style={{color: 'pink'}}>{t}</h3>
+    return <h3 style={{color: 'pink'}}>LABAS, ZUIKI!</h3>
 }
