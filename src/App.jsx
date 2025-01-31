@@ -1,30 +1,24 @@
 import './app.css';
 import './button.scss';
-import A from './Components/043/A';
-import { useState } from "react";
-import B from './Components/043/B';
-import C from './Components/043/C';
+import Labas from './Components/ND/Labas';
+import Props from './Components/ND/Props';
+import ZB from './Components/ND/ZB';
+import Props2 from './Components/ND/Props2';
+import Props3 from './Components/ND/Props3';
 
 export default function App() {
-    
-    const [count1, setCount1] = useState(0);
-    const [count2, setcount2] = useState(0);
-    const [count3, setCount3] = useState(0);
 
     return (
-        
         <div className="App">
             <header className="App-header">
 
-            <A count1={count1}/>
-            <button className="green" onClick={(_ => setCount1(c => c +1))}>+ 1</button>
-            <B count2={count2}/>
-            <button className="blue" onClick={(_ => setcount2(c => c + 1))}>+ 1</button>
-
-            <h2>Count: {count3}</h2>
-            <C setCount3={setCount3}/>
+                <Labas />
+                <Props t="Parašiau bet ką."/>
+                <ZB spalva="1"/>
+                <Props2 t1="Myliu Mamą" t2="Myliu Tėtį"/>
+                <Props3 t1="Saulė" t2="Mėnulis" spalva="orange"/>
+                
             </header>
         </div>
     )
 }
-        
