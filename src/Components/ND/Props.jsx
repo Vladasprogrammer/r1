@@ -1,3 +1,3 @@
-export default function Props() {
-    return <h1>Belekoks tekstas</h1>
+export default function Props({t}) {
+    return <h1>{t}</h1>
 }
