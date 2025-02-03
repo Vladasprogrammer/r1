@@ -11,7 +11,7 @@ export default function AK() {
     const shapeStyle = {
         width: '100px',
         height: '100px',
-        backgroundColor: 'magenta',
+        backgroundColor: 'paleVioletRed',
         marginBottom: '20px',
         borderRadius: isCircle ? '50%' : '0%',
     };
