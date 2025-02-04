@@ -61,3 +61,58 @@
     user-select: none;
   }
 }
+
+fieldset {
+  border: 1px solid skyblue;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  legend {
+    padding: 0 10px;
+    font-size: 20px;
+    font-family: monospace;
+    color: steelblue;
+  }
+  label {
+    font-size: 16px;
+    font-family: monospace;
+    color: steelblue;
+    cursor: pointer;
+  }
+  input, select {
+    font-size: 22px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: gainsboro;
+    border: none;
+    outline: none;
+    color: darkred;
+  }
+  div {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    flex-direction: column;
+    &.checkbox {
+      flex-direction: row;
+      min-width: 280px;
+      input {
+        display: none;
+      }
+      label {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      span {
+        margin-left: 10px;
+        display: block;
+      }
+
+    }
+  }
+}
