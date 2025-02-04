@@ -56,6 +56,7 @@ export default function App() {
     const removeSq = id => {
         setSq(prev => prev.filter(s => s.id !== id));
     }
+
     const toggleRotate = id => {
         setSq(prev => prev.map(s => {
             if (s.id !== id) {
@@ -69,7 +70,6 @@ export default function App() {
             return s;
         }));
     }
-
     
     const rotateAll = _ => {
         sq.forEach(s => {

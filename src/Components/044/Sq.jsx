@@ -10,6 +10,6 @@ export default function Sq({ sq, removeSq, toggleRotate}) {
             onClick={_ => toggleRotate(sq.id)}
             >
             {sq.digit}
-            </div>
+        </div>
     )
 }
