@@ -1,31 +1,28 @@
 import './app.scss';
 import './button.scss';
-import Text from './Components/045/Text';
-import TextX3 from './Components/045/TextX3';
-// import Task from './Components/045/Task';
-import Select from './Components/045/Select';
-import Checkbox from './Components/045/CheckBox';
-import CheckboxX4 from './Components/045/CheckboxX4';
-import RadioX4 from './Components/045/RadioX4';
- 
+import rand from './Functions/rand';
+import Sq from './Components/046/Sq';
+import { useState } from 'react';
+
 export default function App() {
  
+    const [sq, setSq] = useState([]);
+
+    const add = _ => {
+        setSq(s => [...s, rand()]);
+    }
 
     return (
         <div className="App">
             <header className="App-header">
-                {/* <Task />  */}
-
-                <RadioX4 />
-
-                <CheckboxX4 />
-                <Checkbox />
                 
-                <Select />
-                <TextX3 />
-                <Text />
+                <div className='sq-bin'>
+                    {
+                        sq.map((n, i) => <Sq key={i} num={n} />)
+                    }
+                </div>
+                <button className='yellow' onClick={add}>Add</button>
             </header>
         </div>
     );
 }
- 
