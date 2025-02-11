@@ -1,10 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as C from './constants';
 
-export default function Create() {
+export default function Create({ setStoreData, createData }) {
 
     const [satellites, setSatellites] = useState([]);
     const [planet, setPlanet] = useState(C.defaultPlanet);
+
+    useEffect(_ => {
+        if (null === createData) {
+            return;
+        }
+        setPlanet({
+            color_hex: '#' + createData.color_hex,
+            name: createData.name,
+            size: createData.size
+        });
+        setSatellites(createData.satellites);
+    }, [createData]);
 
     const handlePlanet = e => {
         setPlanet({ ...planet, [e.target.name]: e.target.value });
@@ -31,7 +43,6 @@ export default function Create() {
         });
         setPlanet(C.defaultPlanet);
         setSatellites([]);
-        
     }
 
     return (
@@ -50,7 +61,7 @@ export default function Create() {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">What color</label>
-                    <input type="color" name="hex-color" onChange={handlePlanet} className="form-control form-control-color" value={planet.colorHex} />
+                    <input type="color" name="color_hex" onChange={handlePlanet} className="form-control form-control-color" value={planet.color_hex} />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Satellites</label>
@@ -66,7 +77,7 @@ export default function Create() {
                 <button className="blue" onClick={addSat}>+</button>
             </div>
             <div className="card-footer">
-                <button className="green">Add to catalog</button>
+                <button className="green" onClick={submit}>Add to catalog</button>
             </div>
         </div>
     );
