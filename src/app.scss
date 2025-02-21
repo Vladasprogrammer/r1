@@ -127,3 +127,21 @@ input[type="number"] {
   width: 50px;
   margin: 12px;
 }
+
+.com {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 30px;
+  padding: 30px;
+  border: 1px solid #808080;
+  position: relative;
+  h2 {
+    font-size: 24px;
+    color: #808080;
+    position: absolute;
+    top: -40px;
+    padding: 0 5px;
+  }
+}
